@@ -5,7 +5,8 @@ public class Persona{
     private int edad;
     //constructrores
     public Persona(){
-
+        this.nombre = "Sin definir";
+        this.edad = 0;
     }
     public Persona(String nombre,int edad){
         this.nombre = nombre;

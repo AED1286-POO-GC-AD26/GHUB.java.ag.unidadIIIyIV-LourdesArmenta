@@ -1,2 +1,5 @@
+./logica/Alumno.java
+./logica/Persona.java
+./logica/Empleado.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
