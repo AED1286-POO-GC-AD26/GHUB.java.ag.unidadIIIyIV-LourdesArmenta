@@ -26,6 +26,15 @@ public class Persona{
     public void setEdad(int edad){
         this.edad = edad;
     }
+    //muestra detalles del objeto Persona
+    public String mostrarDatos(){
+        return "Nombre: "+nombre+" Edad:"+edad+" años ";
+    }
+    @Override 
+    public String toString(){
+        return " Persona Nombre: "+nombre+" Edad:"+edad+" años ";
+
+    }
     
 
 

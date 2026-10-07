@@ -20,5 +20,16 @@ public class Empleado extends Persona{
     public void setSalario(double salario){
         this.salario = salario;
     }
+    //sobreescribir
+    @Override 
+    public String mostrarDatos(){
+         return "Nombre: "+super.getNombre()+" Edad:"+super.getEdad()+" años "
+        +"Salario:"+salario;
+    }
+     @Override 
+    public String toString(){
+        return " Empleado: "+" Nombre: "+super.getNombre()+" Edad:"+super.getEdad()
+        +" años "+" Salario:"+salario;
+    }
 
 }

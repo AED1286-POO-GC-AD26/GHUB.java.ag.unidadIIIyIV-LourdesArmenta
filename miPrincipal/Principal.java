@@ -53,6 +53,24 @@ public class Principal {
         System.out.println("Edad de e2:"+e2.getEdad());
         System.out.println("Salario de e2:"+e2.getSalario());
 
+        //utilinzado el metodo para mostrar detalles de Persona
+        System.out.println("Objetos tipo Persona (BASE)");
+        System.out.println("Detalle de p1:"+p1.mostrarDatos());
+        System.out.println("Detalle de p2:"+p2.mostrarDatos());
+        System.out.println("Objetos tipo Alumno y Empleado (DERIVADAS)");
+        System.out.println("Detalle de a1:"+a1.mostrarDatos());
+        System.out.println("Detalle de a2:"+a2.mostrarDatos());
+        System.out.println("Detalle de e1:"+e1.mostrarDatos());
+        System.out.println("Datalle de e2:"+e2.mostrarDatos());
+
+        //Otroa de mostrar los detalles de un objeto
+        System.out.println("Persona p1"+p1.toString());
+        System.out.println("Persona p1"+p2);
+        System.out.println(a1);
+        System.out.println(a2);
+        System.out.println(e1);
+        System.out.println(e2);
+
 
 
         
