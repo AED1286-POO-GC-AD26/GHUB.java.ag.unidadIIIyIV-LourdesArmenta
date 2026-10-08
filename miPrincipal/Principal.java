@@ -1,6 +1,9 @@
 package miPrincipal;
 import logica.Persona;
 import logica.Empleado;
+
+import java.time.LocalDate;
+
 import logica.Alumno;
 
 public class Principal {
@@ -71,6 +74,15 @@ public class Principal {
         System.out.println(e1);
         System.out.println(e2);
 
+        //DEMOSTRACION DE LA JERARQUIA DE CLASES PUBLICACION-LIBRO-REVISTA
+        System.out.println("==================================================");
+        System.out.println("DEMOSTRACIÓN DE HERENCIA EN CLASE BASE PUBLICACION");
+        System.out.println("=================================================");        
+        //LocalDate crea una fecha sin hora
+        //LocalDate(año,mes,dia)
+        //LocalDate fecha = LocalDate.of(2026,10,8);
+        //LocalDate fechaActual = LocalDate.now();
+        
 
 
         
