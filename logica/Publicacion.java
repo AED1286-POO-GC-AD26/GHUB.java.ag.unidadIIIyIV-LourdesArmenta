@@ -26,10 +26,12 @@ public class Publicacion{
     public void setFechaPub(LocalDate fechaPub) {
         this.fechaPub = fechaPub;
     }
+
     @Override
     public String toString() {
         return "Publicacion [editorial=" + editorial + ", fechaPub=" + fechaPub + "]";
     }
+    
     
 
 }

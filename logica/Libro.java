@@ -1,7 +1,5 @@
 package logica;
-
 import java.time.LocalDate;
-
 public class Libro extends Publicacion{
     //atributos
     private String isbn;
@@ -40,7 +38,7 @@ public class Libro extends Publicacion{
     }
     @Override
     public String toString() {
-        return "Libro [isbn=" + isbn + ", autor=" + autor + ", titulo=" + titulo + "]";
+        return "Editorial: "+super.getEditorial()+" Fecha Publicacion: "+super.getFechaPub()+" Libro [isbn=" + isbn + ", autor=" + autor + ", titulo=" + titulo + "]";
     }
     
     
