@@ -1,6 +1,7 @@
 package logica;
 //CLASE BASE
 public class Fecha {
+    //atribudos
     private int dia;
     private int mes;
     private int anio;

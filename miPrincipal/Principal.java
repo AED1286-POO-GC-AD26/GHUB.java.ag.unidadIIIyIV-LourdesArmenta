@@ -3,6 +3,8 @@ import logica.Persona;
 import logica.Empleado;
 import logica.Alumno;
 import java.time.LocalDate;
+import java.util.Arrays;
+
 import logica.Publicacion;
 import logica.Libro;
 import logica.Revista;
@@ -141,7 +143,54 @@ public class Principal {
         String cad2 ="hola";
         System.out.println("es "+cad1+" igual a "+cad2+ " "+(cad1.equals(cad2)));
 
-        //falta comprobadar igualdas con dos fechasdetalladas
+        //Comparar igualdad en dos fecha detalladas
+        FechaDetallada fec7 = new FechaDetallada(14,10,2026);
+        FechaDetallada fec8 = new FechaDetallada(14,10,2026);
+        FechaDetallada fec9 = new FechaDetallada(15,10,2026);
+
+        System.out.println("la fecha :"+fec7+" es igual a la fecha:"+fec8+" ? "+fec7.equals(fec8));
+        System.out.println("la fecha :"+fec8+" es igual a la fecha:"+fec9+" ? "+fec8.equals(fec9));
+
+        //String arreglo_meses[] = fec8.meses; //DEJO DE FUNCIONAR PORQUE LA HICE PROIVADA
+        System.out.println("El arreglo de meses de "+fec8+":");
+        //String cadena = fec8.getMeses(); //DEJO DE FUNCIONAR PORQUE EL METODO LO HICE ESTATICO
+        //System.out.println(cadena);
+        /* 
+        for(int i=0;i<arreglo_meses.length;i++){
+            System.out.println(arreglo_meses[i]);
+        }
+            */
+        //arreglo_meses = fec9.meses; //DEJO DE FUNCIONAR PORQUE LA HICE PRIVADA
+        System.out.println("El arreglo de meses de "+fec9+":");
+        //cadena = fec9.getMeses(); //DEJO DE FUNCIONAR PORQUE EL METODO LO HICE STATICO
+        //System.out.println(cadena);
+        /* 
+        for(int i=0;i<arreglo_meses.length;i++){
+            System.out.println(arreglo_meses[i]);
+        }
+            */
+
+        //arreglo_meses = fec7.meses; //DEJO DE FUNCIONAR PORQUE LA HICE PRIVADA
+        System.out.println("El arreglo de meses de "+fec7+":");
+        //cadena = fec7.getMeses(); //DEJO DE FUNCIONAR PORQUE EL METODO LO HICE ESTATICO
+        //System.out.println(cadena);
+        /* 
+        String cadena = Arrays.toString(arreglo_meses);
+        System.out.println(cadena);
+
+        //arreglo_meses = FechaDetallada.meses; //DEJO DE FUNCIONAR PORQUE LA HICE PROVADA
+        */
+        String cadena = FechaDetallada.getMeses();
+        System.out.println(cadena);
+        System.out.println("Cantidad de Fechas que he creado:"+FechaDetallada.getContador());
+
+
+
+
+
+
+
+
 
 
 
