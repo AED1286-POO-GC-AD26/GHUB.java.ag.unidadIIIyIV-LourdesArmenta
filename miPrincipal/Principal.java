@@ -4,6 +4,10 @@ import logica.Empleado;
 import logica.Alumno;
 import java.time.LocalDate;
 import java.util.Arrays;
+import empleado.EmpleadoComision;
+import empleado.EmpleadoPorHoras;
+import empleado.EmpleadoSueldoFijo;
+
 
 import logica.Publicacion;
 import logica.Libro;
@@ -184,6 +188,16 @@ public class Principal {
         System.out.println(cadena);
         System.out.println("Cantidad de Fechas que he creado:"+FechaDetallada.getContador());
 
+        System.out.println("================================================================================");
+        System.out.println("DEMOSTRACIÓN DE HERENCIA EN CLASE EMPLEADO Y DERIVADA: COMISION,POR HORAS Y FIJO");
+        System.out.println("================================================================================");
+
+        empleado.Empleado emp1 = new empleado.Empleado("Juan Perez",21,"Base");
+        System.out.println(emp1);
+        EmpleadoSueldoFijo emp2 = new EmpleadoSueldoFijo("Emilia Cazarez",18,
+                "EVENTUAL",15000.00);
+        System.out.println("Nombre:"+emp2.getNombre()+" Edad "+emp2.getEdad()+" Tipo:"+emp2.getTipoRelacionLaboral()+" "+emp2);
+        
 
 
 

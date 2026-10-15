@@ -26,7 +26,8 @@ public class Empleado extends Persona{
          return "Nombre: "+super.getNombre()+" Edad:"+super.getEdad()+" años "
         +"Salario:"+salario;
     }
-     @Override 
+    
+    @Override 
     public String toString(){
         return " Empleado: "+" Nombre: "+super.getNombre()+" Edad:"+super.getEdad()
         +" años "+" Salario:"+salario;
