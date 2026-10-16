@@ -12,6 +12,7 @@ public class EmpleadoComision extends Empleado{
         super();
         this.comision = comision;
         this.ventasRealizadas = ventasRealizadas;
+        
     }
     public EmpleadoComision(String nombre, int edad, String tipoRelacionLaboral, double comision,
             int ventasRealizadas) {

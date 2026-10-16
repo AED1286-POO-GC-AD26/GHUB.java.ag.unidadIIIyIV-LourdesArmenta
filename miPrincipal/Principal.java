@@ -7,6 +7,8 @@ import java.util.Arrays;
 import empleado.EmpleadoComision;
 import empleado.EmpleadoPorHoras;
 import empleado.EmpleadoSueldoFijo;
+import logica.Ventana;
+import logica.VentanaEspecial;
 
 
 import logica.Publicacion;
@@ -197,22 +199,17 @@ public class Principal {
         EmpleadoSueldoFijo emp2 = new EmpleadoSueldoFijo("Emilia Cazarez",18,
                 "EVENTUAL",15000.00);
         System.out.println("Nombre:"+emp2.getNombre()+" Edad "+emp2.getEdad()+" Tipo:"+emp2.getTipoRelacionLaboral()+" "+emp2);
-        
 
+        System.out.println("==================================================================================");
+        System.out.println("DEMOSTRACIÓN DE SOBRECARGA DE METODOS DE CLASES DERIVADAS: Ventana y VentanaEspecial");
+        System.out.println("===================================================================================");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        VentanaEspecial mv = new VentanaEspecial();
+        Ventana v = new Ventana();
+        v.copiar("cualquie cadena", 0, 0);
+        mv.copiar(v);
+        mv.copiar("Esto es una cadena", 1, 5);
+        mv.copiar('$',10,1,5);
 
     }
 }
