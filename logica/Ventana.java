@@ -12,6 +12,13 @@ public class Ventana {
                         " VENTANA que recibe parámetro tres tipos: String,int,int");
 
     }
+    protected  void metodo1(){
+        System.out.println("Estoy en el metodo1 de la clase Ventana");
+    }
+    protected  void metodo3(){
+        
+    }
+
    
     
 }

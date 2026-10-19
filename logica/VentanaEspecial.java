@@ -15,5 +15,18 @@ public class VentanaEspecial extends Ventana{
 
     }
 
+    public void metodo1(){
+        System.out.println("Estoy en método1 de la clase derivada e invoco a "+
+            " metodo1 de la clase base");
+        super.metodo1();
+    }
+    public void metodo2(){
+        this.metodo1();
+        super.metodo1();
+        metodo3();
+        super.metodo3();
+    }
+
+
     
 }

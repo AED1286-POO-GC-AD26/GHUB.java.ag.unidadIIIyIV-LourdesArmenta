@@ -9,6 +9,10 @@ import empleado.EmpleadoPorHoras;
 import empleado.EmpleadoSueldoFijo;
 import logica.Ventana;
 import logica.VentanaEspecial;
+import logica.Barco;
+import logica.DeVapor;
+import logica.Velero;
+import logica.Carguero;
 
 
 import logica.Publicacion;
@@ -210,6 +214,37 @@ public class Principal {
         mv.copiar(v);
         mv.copiar("Esto es una cadena", 1, 5);
         mv.copiar('$',10,1,5);
+
+        mv.metodo1();
+        //v.metodo1() //no es visible desde otro paquete porque no tiene identificador de acceso o}
+                      //porque sea proteguida.
+
+        System.out.println("================================================================");
+        System.out.println("DEMOSTRACION DE CONVERCIONES DE TIPO EN UNA JERARQUIA DE CLASES:");
+        System.out.println("================================================================");
+        Barco b1 = new Barco();
+        DeVapor dv = new DeVapor();
+        Velero vel = new Velero();
+        Carguero c1 = new Carguero();
+        b1.alarma();
+        b1.alarma("help ");
+        System.out.println();
+        dv.alarma();
+        dv.alarma("help");
+        System.out.println();
+        vel.alarma();
+        vel.alarma("help ");
+        System.out.println();
+        c1.alarma();
+        c1.alarma("help ");
+        //PENDIENTE MOSTRAR LAS CONVERSIONES DE TIPO
+
+
+
+
+
+        
+    
 
     }
 }

@@ -2,11 +2,15 @@
 ./logica/Ventana.java
 ./logica/Publicacion.java
 ./logica/FechaDetallada.java
+./logica/DeVapor.java
 ./logica/Alumno.java
 ./logica/Fecha.java
 ./logica/Persona.java
 ./logica/VentanaEspecial.java
+./logica/Carguero.java
+./logica/Barco.java
 ./logica/Empleado.java
+./logica/Velero.java
 ./logica/Libro.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
