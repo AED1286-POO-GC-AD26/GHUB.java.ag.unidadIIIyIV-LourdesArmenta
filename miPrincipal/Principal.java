@@ -13,6 +13,7 @@ import logica.Barco;
 import logica.DeVapor;
 import logica.Velero;
 import logica.Carguero;
+import java.util.ArrayList;
 
 
 import logica.Publicacion;
@@ -238,6 +239,58 @@ public class Principal {
         c1.alarma();
         c1.alarma("help ");
         //PENDIENTE MOSTRAR LAS CONVERSIONES DE TIPO
+        int k = (int)5.8;
+        System.out.println("Valor k convertido:"+k);
+        //las conversiones pueden hacercon con refencias a objetos
+        //pero no son posibles todas la conversiones entre referencias, hay algunas imposibles
+        Integer g = 66;
+        //Revista pb = (Revista)g;
+        //Por lo general, solo se pueden hacer conversiones en una jerarquia de clases
+        Barco b2;
+        Velero v2 = new Velero();
+        DeVapor dv1 = new DeVapor();
+        b2 = (Barco) v2; //conversion explicita
+        b2 = v2; //conversion inmplícita o automatica
+        b2 = dv1;
+        b2 = (Barco)dv1;
+
+        Barco b3;
+        DeVapor dv2;
+        Carguero c2 = new Carguero();
+        b3 = c2;
+        dv2 = c2;
+        Velero v3;
+        c2.alarma("Auxilio");
+        b3.alarma("Auxilio 2");
+
+        //v3 = (Velero) c2; //NO ES POSIBLE PORQUE UN CARGERO NO ES UN VELERO
+
+        System.out.println("================================================================");
+        System.out.println("DEMOSTRACION DE LAS CLASES ArrayList y LinkedList:              ");
+        System.out.println("================================================================");
+        
+        ArrayList<String> nombres = new ArrayList<String>();
+        nombres.add("Ana");
+        nombres.add("Luis");
+        nombres.add("Carlos");
+
+        System.out.println("la posicion 0 de nombres= "+nombres.get(0));
+        System.out.println("la posicion 2 de nombres= "+nombres.get(2));
+        System.out.println("la posicion 1 de nombres= "+nombres.get(1));
+
+        System.err.println("RECORRO EL ARRAYLIST SECUENCIALMENTE:");
+        for(int i=0;i<nombres.size();i++){
+            System.out.println(nombres.get(i));
+        }
+        System.out.println();
+
+
+
+
+
+
+
+
 
 
 
