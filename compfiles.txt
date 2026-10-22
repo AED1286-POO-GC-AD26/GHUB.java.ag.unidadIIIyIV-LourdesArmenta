@@ -22,6 +22,9 @@
 ./logica/Libro.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
+./gestionBiblioteca/Biblioteca.java
+./gestionBiblioteca/Principal.java
+./gestionBiblioteca/Libro.java
 ./empleado/EmpleadoPorHoras.java
 ./empleado/EmpleadoComision.java
 ./empleado/EmpleadoSueldoFijo.java
