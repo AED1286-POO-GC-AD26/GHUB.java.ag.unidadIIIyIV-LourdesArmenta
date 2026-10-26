@@ -18,6 +18,7 @@
 ./logica/Barco.java
 ./logica/EstudianteDoctorado.java
 ./logica/Empleado.java
+./logica/DiaSemana.java
 ./logica/Velero.java
 ./logica/Libro.java
 ./miPrincipal/Principal.java

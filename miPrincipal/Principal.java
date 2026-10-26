@@ -283,6 +283,11 @@ public class Principal {
             System.out.println(nombres.get(i));
         }
         System.out.println(); 
+
+        System.out.println("==========================================");
+        System.out.println("DEMOSTRACION DEL USO DE Enum               ");
+        System.out.println("===========================================");
+        //PENDIENTE HACER LA DEMOSTRACION
         
 
 

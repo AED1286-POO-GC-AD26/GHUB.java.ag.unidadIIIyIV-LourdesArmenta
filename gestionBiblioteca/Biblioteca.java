@@ -58,5 +58,14 @@ public class Biblioteca{
         }
         return copia;
     }
+    public void eliminarLibro(String idEjemplar){
+
+    }
+    public void eliminarLibro(Libro libro){
+
+    }
+    private void eliminarLibroInterno(Libro libro){
+
+    }
     
 }
