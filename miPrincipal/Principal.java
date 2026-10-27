@@ -1,5 +1,6 @@
 package miPrincipal;
 import logica.Persona;
+import logica.Prioridad;
 import logica.Empleado;
 import logica.Alumno;
 import java.time.LocalDate;
@@ -15,12 +16,17 @@ import logica.Velero;
 import logica.Carguero;
 import java.util.ArrayList;
 
-
 import logica.Publicacion;
 import logica.Libro;
 import logica.Revista;
 import logica.Fecha;
 import logica.FechaDetallada;
+
+import logica.DiaSemana;
+import logica.Estado;
+
+import logica.Tarea;
+
 public class Principal {
     public static void main(String[] args) {
         System.out.println("==========================================");
@@ -287,8 +293,53 @@ public class Principal {
         System.out.println("==========================================");
         System.out.println("DEMOSTRACION DEL USO DE Enum               ");
         System.out.println("===========================================");
-        //PENDIENTE HACER LA DEMOSTRACION
-        
+
+        DiaSemana dia = DiaSemana.MIERCOLES;
+        if(dia == DiaSemana.MIERCOLES){
+            System.out.println("Estoy en mitad de Semana");
+        }
+        System.out.println("Dia="+dia);
+
+        //COMPARACION DE ENUM VERSUS STRING
+        String diaSem= "MIiERCOLEs";
+        if(diaSem.equalsIgnoreCase("MIERCOLES")){
+            System.out.println("Estoy en mitad de Semana");
+        }
+        System.out.println("Dia="+diaSem);
+
+        dia = DiaSemana.VIERNES;
+        System.out.println("Nombre:"+dia.name());
+        System.out.println("Posicion Ordinal:"+dia.ordinal());
+
+        DiaSemana arreglo_dias[] = DiaSemana.values();
+        System.out.println("Recorriendo a traves de Iteradores:");
+        for(DiaSemana d:arreglo_dias){
+            System.out.println(d);
+        }
+        System.out.println("Recorriendo a través de indice:");
+        for(int i=0;i<arreglo_dias.length;i++){
+            System.out.println(arreglo_dias[i].name());
+        }
+
+        Estado pedido = Estado.PENDIENTE;
+        switch (pedido) {
+            case PENDIENTE:
+                System.out.println("El pedido esta pendiente...");
+                break;
+            case PROCESO:
+                System.out.println("El pedido esta en proceso...");
+                break;
+            case TERMINADO:
+                System.out.println("El pedido esta terminado..");
+                break;
+            default:
+                System.out.println("Estado incorrecto...");
+                break;
+        }
+
+        //ejemplo de un atributo tipo enum
+        Tarea tarea = new Tarea("Elaboracion Reporte", Prioridad.ALTA);
+        System.out.println(tarea.getPrioridad());
 
 
 

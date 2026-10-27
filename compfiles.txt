@@ -1,12 +1,15 @@
 ./logica/Revista.java
+./logica/Tarea.java
 ./logica/Ventana.java
 ./logica/Publicacion.java
 ./logica/FechaDetallada.java
 ./logica/DeVapor.java
 ./logica/Alumno.java
 ./logica/Estudiante.java
+./logica/Prioridad.java
 ./logica/Avion.java
 ./logica/Helicoptero.java
+./logica/Estado.java
 ./logica/Fecha.java
 ./logica/TransporteVertical.java
 ./logica/Persona.java
