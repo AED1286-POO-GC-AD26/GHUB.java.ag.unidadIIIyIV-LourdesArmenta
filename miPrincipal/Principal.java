@@ -27,6 +27,14 @@ import logica.Estado;
 
 import logica.Tarea;
 
+import logica.EstadoSolicitud;
+import logica.Solicitud;
+
+import logica.Animal;
+import logica.Perro;
+import logica.Gato;
+import logica.Pajaro;
+
 public class Principal {
     public static void main(String[] args) {
         System.out.println("==========================================");
@@ -340,9 +348,50 @@ public class Principal {
         //ejemplo de un atributo tipo enum
         Tarea tarea = new Tarea("Elaboracion Reporte", Prioridad.ALTA);
         System.out.println(tarea.getPrioridad());
+        //ejempo de un enumerado en la clase Solicitud
+        EstadoSolicitud estadoSol = EstadoSolicitud.EN_REVISION;
+        Solicitud sol = new Solicitud("Lourdes Armenta", 123, estadoSol);
+        System.out.println(sol);
+        sol.setEstado(EstadoSolicitud.ACEPTADA);
+        estadoSol = sol.getEstado();
+        System.out.println(sol);
+        switch (estadoSol) {
+            case RECIBIDA:
+                System.out.println("La solicitud esta recibida...");
+                break;
+            case EN_REVISION:
+                System.out.println("La solicitud esta en revision...");  
+                break;
+            case ACEPTADA:
+                System.out.println("La solicitud esta Aceptada...");
+                break;
+            case RECHAZADA:
+                System.out.println("La solicitud esta Rechazada...");
+                break;
+            default:
+                System.out.println("La solicitud tiene un estado inválido...");
+                break;
+        }
+        //DEMOSTRACION DEL USO DE POLIMORFISMO
+        Gato gato1 = new Gato();
+        Perro perro1 = new Perro();
+        Pajaro pajaro1 = new Pajaro();
+        Animal lista_animales[]={perro1,gato1,pajaro1};
+        lista_animales[0].hacerSonido();
+        lista_animales[1].hacerSonido();
+        lista_animales[2].hacerSonido();
+        gato1.hacerSonido();
+        perro1.hacerSonido();
+        pajaro1.hacerSonido();
+
+        Animal gato2 = new Gato();
+        Animal perro2 = new Perro();
+        Animal pajaro2 = new Pajaro();
+        Animal animal2 = new Animal();
+        gato2.hacerSonido();
+        animal2.hacerSonido();
 
 
-
-
+        
     }
 }
