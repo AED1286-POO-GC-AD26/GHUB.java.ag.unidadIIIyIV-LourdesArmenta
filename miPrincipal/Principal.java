@@ -387,9 +387,28 @@ public class Principal {
         Animal gato2 = new Gato();
         Animal perro2 = new Perro();
         Animal pajaro2 = new Pajaro();
-        Animal animal2 = new Animal();
+       // Animal animal2 = new Animal(); //esto no es posible porque ahors Animal es
+                                        //abstracta y no puede instanciarse
         gato2.hacerSonido();
-        animal2.hacerSonido();
+        //animal2.hacerSonido(); //no esposible porque ahora Animal es abstracto
+        gato2.moverse();
+        perro2.moverse();
+        pajaro2.moverse();
+        
+        Animal perro3 = new Perro("Paulino");
+        Animal gato3 = new Gato("Adelitaaaaa");
+        Animal pajaro3 = new Pajaro("Lorita");
+        System.out.println(perro3);
+        System.out.println(gato3);
+        System.out.println(pajaro3);
+        gato3.setNombre("Adelita");
+        System.out.println(gato3);
+        System.out.print(perro3+" ");
+        perro3.hacerSonido();
+        perro3.moverse();
+
+        
+
 
 
         
