@@ -1,17 +1,26 @@
 package gestionBiblioteca;
-public class Libro {
+public class Libro extends  MaterialBibliografico{
     private String idEjemplar;
     private String isbn;
-    private String titulo;
+    //private String titulo;
     private String autor;
     private boolean disponible;
 
     public Libro() {
+        super();
         idEjemplar = "NA";
         isbn = "NA";
-        titulo = "Desconocido";
+        //titulo = "Desconocido";
         autor = "Desconocido";
         disponible = true;
+    }
+    public Libro(String idEjemplar, String isbn, String titulo, String autor,int anio){
+        super(titulo, anio);
+        this.idEjemplar = idEjemplar;
+        this.isbn = isbn;
+        this.autor = autor;
+        this.disponible = true;
+
     }
 
     public Libro(String idEjemplar, String isbn, String titulo, String autor) {
@@ -46,9 +55,7 @@ public class Libro {
         return isbn;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
+    
 
     public String getAutor() {
         return autor;
@@ -66,6 +73,10 @@ public class Libro {
         }
         return idEjemplar + " - " + isbn + " - " + titulo + " (" + autor + ") - " +
                 estado;
+    }
+    @Override 
+    public int calcularTiempoPrestamo(){
+        return 30;
     }
     
 }

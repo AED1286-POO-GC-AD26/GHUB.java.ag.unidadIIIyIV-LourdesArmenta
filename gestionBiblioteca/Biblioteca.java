@@ -1,11 +1,11 @@
 package gestionBiblioteca;
 public class Biblioteca{
-    private Libro listaLibros[];
+    private MaterialBibliografico listaLibros[];
+    
     private static final int M = 20;
     private int cardinalLibros;
     private int capacidadLibros;
     public Biblioteca(){
-
         listaLibros = new Libro[M];
         this.capacidadLibros = M;
         this.cardinalLibros = 0;
@@ -26,7 +26,7 @@ public class Biblioteca{
     // Centralizar esta logica evita duplicarla y mantiene una sola regla de registro.
     private void registrarLibroInterno(Libro libro) {
         if (cardinalLibros == capacidadLibros) {
-            Libro nuevaLista[] = new Libro[capacidadLibros + M];
+            MaterialBibliografico nuevaLista[] = new Libro[capacidadLibros + M];
             for (int i = 0; i < capacidadLibros; i++) {
                 nuevaLista[i] = listaLibros[i];
             }
@@ -42,19 +42,21 @@ public class Biblioteca{
     public boolean existeLibro(String idEjemplar) {
         return buscarLibroPorIdEjemplar(idEjemplar) != null;
     }
-    public Libro buscarLibroPorIdEjemplar(String idEjemplar) {
+    public MaterialBibliografico buscarLibroPorIdEjemplar(String idEjemplar) {
         for (int i = 0; i < cardinalLibros; i++) {
-            if (listaLibros[i].getIdEjemplar().equals(idEjemplar)) {
+            Libro libro = (Libro) listaLibros[i];
+
+            if (libro.getIdEjemplar().equals(idEjemplar)) {
                 return listaLibros[i];
             }
         }
         return null;
     }
 
-    public Libro[] consultarTodosLosLibros() {
-        Libro copia[] = new Libro[cardinalLibros];
+    public Libro consultarTodosLosLibros() {
+        Libro copia = new Libro[cardinalLibros];
         for (int i = 0; i < cardinalLibros; i++) {
-            copia[i] = listaLibros[i];
+            copia[i] = (Libro) listaLibros[i];
         }
         return copia;
     }

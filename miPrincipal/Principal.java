@@ -406,6 +406,18 @@ public class Principal {
         System.out.print(perro3+" ");
         perro3.hacerSonido();
         perro3.moverse();
+        gato3.dormir();
+        perro3.dormir();
+        //Ejemplo de variables polimorficas
+        Animal miAnimal; //variable polimorfica
+        miAnimal = new Perro("Fiona");
+        miAnimal.hacerSonido();
+        miAnimal = new Gato("preciosa");
+        miAnimal.hacerSonido();
+
+
+
+
 
         
 

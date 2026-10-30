@@ -18,6 +18,10 @@ public abstract class Animal {
     public void moverse(){
         System.out.println("El animal se mueve");
     }
+    public final void dormir(){
+        System.out.println(nombre+" esta durmiendo....");
+
+    }
     @Override 
     public String toString(){
         return nombre;

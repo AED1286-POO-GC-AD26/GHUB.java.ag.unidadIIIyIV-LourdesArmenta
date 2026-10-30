@@ -10,13 +10,13 @@ public class Principal{
         bib1.registrarLibro(lib3);
         bib1.registrarLibro("4","ISBN-4","El llano en llamas","Juan Rulfo");
         bib1.registrarLibro("4","ISBN-4","El llano en llamas","Juan Rulfo");
-        Libro libro= bib1.buscarLibroPorIdEjemplar("2");
+        Libro libro= (Libro) bib1.buscarLibroPorIdEjemplar("2");
         if(libro !=null){
             System.out.println("Libro encontrado:"+libro.devolverDatos());
         }else{
             System.out.println("Libro No encontrado");
         }
-        libro= bib1.buscarLibroPorIdEjemplar("5");
+        libro= (Libro) bib1.buscarLibroPorIdEjemplar("5");
         if(libro !=null){
             System.out.println("Libro encontrado:"+libro.devolverDatos());
         }else{
