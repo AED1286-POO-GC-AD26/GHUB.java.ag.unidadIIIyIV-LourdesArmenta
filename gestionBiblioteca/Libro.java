@@ -1,22 +1,17 @@
 package gestionBiblioteca;
 public class Libro extends  MaterialBibliografico{
-    private String idEjemplar;
     private String isbn;
-    //private String titulo;
     private String autor;
     private boolean disponible;
 
     public Libro() {
         super();
-        idEjemplar = "NA";
         isbn = "NA";
-        //titulo = "Desconocido";
         autor = "Desconocido";
         disponible = true;
     }
     public Libro(String idEjemplar, String isbn, String titulo, String autor,int anio){
-        super(titulo, anio);
-        this.idEjemplar = idEjemplar;
+        super(idEjemplar,titulo, anio);
         this.isbn = isbn;
         this.autor = autor;
         this.disponible = true;
@@ -40,22 +35,15 @@ public class Libro extends  MaterialBibliografico{
             System.out.println("El autor no puede ser nulo o estar en blanco");
             return;
         }
-        this.idEjemplar = idEjemplar;
+        
         this.isbn = isbn;
-        this.titulo = titulo;
         this.autor = autor;
         this.disponible = true;
-    }
-
-    public String getIdEjemplar() {
-        return idEjemplar;
     }
 
     public String getIsbn() {
         return isbn;
     }
-
-    
 
     public String getAutor() {
         return autor;
@@ -65,15 +53,16 @@ public class Libro extends  MaterialBibliografico{
         return disponible;
     }
     public String devolverDatos() {
-        String estado;
+        Estado estado;
         if (disponible) {
-            estado = "DISPONIBLE";
+            estado = Estado.DISPONIBLE;
         } else {
-            estado = "PRESTADO";
+            estado = Estado.PRESTADO;
         }
-        return idEjemplar + " - " + isbn + " - " + titulo + " (" + autor + ") - " +
+        return super.getIdEjemplar() + " - " + isbn + " - " + titulo + " (" + autor + ") - " +
                 estado;
     }
+
     @Override 
     public int calcularTiempoPrestamo(){
         return 30;
