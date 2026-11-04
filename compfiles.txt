@@ -32,6 +32,9 @@
 ./logica/Libro.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
+./gestionBiblioteca/Revista.java
+./gestionBiblioteca/MaterialBibliografico.java
+./gestionBiblioteca/Estado.java
 ./gestionBiblioteca/Biblioteca.java
 ./gestionBiblioteca/Principal.java
 ./gestionBiblioteca/Libro.java

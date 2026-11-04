@@ -2,19 +2,19 @@ package gestionBiblioteca;
 public class Libro extends  MaterialBibliografico{
     private String isbn;
     private String autor;
-    private boolean disponible;
+    private Estado estado;
 
     public Libro() {
         super();
         isbn = "NA";
         autor = "Desconocido";
-        disponible = true;
+        estado = Estado.DISPONIBLE;
     }
     public Libro(String idEjemplar, String isbn, String titulo, String autor,int anio){
         super(idEjemplar,titulo, anio);
         this.isbn = isbn;
         this.autor = autor;
-        this.disponible = true;
+        this.estado = Estado.DISPONIBLE;
 
     }
 
@@ -38,7 +38,7 @@ public class Libro extends  MaterialBibliografico{
         
         this.isbn = isbn;
         this.autor = autor;
-        this.disponible = true;
+        this.estado = Estado.DISPONIBLE;
     }
 
     public String getIsbn() {
@@ -48,19 +48,21 @@ public class Libro extends  MaterialBibliografico{
     public String getAutor() {
         return autor;
     }
+    public Estado getEstado(){
+        return estado;
+    }
+    public void setEstado(Estado estado){
+        this.estado = estado;
+    }
 
     public boolean estarDisponible() {
-        return disponible;
+         return estado == Estado.DISPONIBLE;
     }
+
+    @Override 
     public String devolverDatos() {
-        Estado estado;
-        if (disponible) {
-            estado = Estado.DISPONIBLE;
-        } else {
-            estado = Estado.PRESTADO;
-        }
-        return super.getIdEjemplar() + " - " + isbn + " - " + titulo + " (" + autor + ") - " +
-                estado;
+        return getIdEjemplar() + " - ISBN: " + isbn + " - " + getTitulo() + " ("
+                + getAnio() + ", " + autor + ") - " + estado;
     }
 
     @Override 

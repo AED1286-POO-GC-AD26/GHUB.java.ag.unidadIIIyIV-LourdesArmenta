@@ -3,19 +3,19 @@ package gestionBiblioteca;
 public class Revista extends MaterialBibliografico {
     private String periodicidad;
     private String issn;
-    private boolean disponible;
+    private Estado estado;
     public Revista(){
         super();
         this.periodicidad = "No Definida";
         this.issn = "NA";
-        disponible = true;
+        estado = Estado.DISPONIBLE;
     }
 
     public Revista(String idEjemplar, String titulo, int anio,String periodicidad,String issn) {
         super(idEjemplar, titulo, anio);
         this.periodicidad = periodicidad;
         this.issn = issn;
-        disponible = true;
+        estado = Estado.DISPONIBLE;
     }
     public String getPeriodicidad(){
         return periodicidad;
@@ -30,14 +30,17 @@ public class Revista extends MaterialBibliografico {
     public void setIssn(String issn) {
         this.issn = issn;
     }
-    
+    public Estado getEstado(){
+        return estado;
+    }
+    public void setEstado(Estado estado){
+        this.estado = estado;
+    }
+
+
+    @Override 
     public String devolverDatos() {
-        Estado estado;
-        if (disponible) {
-            estado = Estado.DISPONIBLE;
-        } else {
-            estado = Estado.PRESTADO;
-        }
+        
         return  super.getIdEjemplar()+ issn + "  " + titulo + " " +periodicidad+ " "+
                 estado;
     }

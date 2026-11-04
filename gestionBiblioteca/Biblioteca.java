@@ -1,15 +1,18 @@
 package gestionBiblioteca;
-public class Biblioteca{
-    private MaterialBibliografico listaLibros[];
-    
-    private static final int M = 20;
-    private int cardinalLibros;
-    private int capacidadLibros;
-    public Biblioteca(){
-        listaLibros = new Libro[M];
-        this.capacidadLibros = M;
-        this.cardinalLibros = 0;
+import java.util.ArrayList;
 
+import logica.Publicacion;
+public class Biblioteca{
+    //private MaterialBibliografico listaLibros[];
+    private final ArrayList<MaterialBibliografico> materialBibliograficos;
+    //private static final int M = 20;
+    //private int cardinalLibros;
+    //private int capacidadLibros;
+    public Biblioteca(){
+        //listaLibros = new Libro[M];
+        //this.capacidadLibros = M;
+        //this.cardinalLibros = 0;
+        materialBibliograficos = new ArrayList<MaterialBibliografico>();
     }
     // Metodo publico delegado: crea el objeto Libro y delega el registro en la
     // sobrecarga que recibe el objeto completo.
@@ -25,6 +28,8 @@ public class Biblioteca{
     // Metodo privado delegado que concentra la validacion y el almacenamiento.
     // Centralizar esta logica evita duplicarla y mantiene una sola regla de registro.
     private void registrarLibroInterno(Libro libro) {
+
+        /* 
         if (cardinalLibros == capacidadLibros) {
             MaterialBibliografico nuevaLista[] = new Libro[capacidadLibros + M];
             for (int i = 0; i < capacidadLibros; i++) {
@@ -38,11 +43,16 @@ public class Biblioteca{
         } else {
             System.out.println("Ya existe un ejemplar con el id: " + libro.getIdEjemplar());
         }
+         */
+
+        materialBibliograficos.add(libro);
+
     }
     public boolean existeLibro(String idEjemplar) {
         return buscarLibroPorIdEjemplar(idEjemplar) != null;
     }
     public MaterialBibliografico buscarLibroPorIdEjemplar(String idEjemplar) {
+        /* 
         for (int i = 0; i < cardinalLibros; i++) {
             Libro libro = (Libro) listaLibros[i];
 
@@ -51,14 +61,33 @@ public class Biblioteca{
             }
         }
         return null;
+        */
+       /* 
+       for (int i=0; i<materialBibliograficos.size();i++){
+            if(materialBibliograficos.get(i).equals(idEjemplar)){
+                return materialBibliograficos.get(i);
+            }
+       }
+       return null;
+       */
+       //EL CODIGO DE ARRIBO PUEDE SER SUSTITUIDO POR EL SIGUIENTE
+       for (MaterialBibliografico mat : materialBibliograficos) {
+            if (mat.getIdEjemplar().equals(idEjemplar)) {
+                return mat;
+            }
+        }
+        return null;
+
     }
 
-    public Libro consultarTodosLosLibros() {
-        Libro copia = new Libro[cardinalLibros];
-        for (int i = 0; i < cardinalLibros; i++) {
-            copia[i] = (Libro) listaLibros[i];
+    public ArrayList<Libro> consultarTodosLosLibros() {
+       ArrayList<Libro> libros = new ArrayList<>();
+        for (MaterialBibliografico mat : materialBibliograficos) {
+            if (mat instanceof Libro libro) {
+                libros.add(libro);
+            }
         }
-        return copia;
+        return libros;
     }
     public void eliminarLibro(String idEjemplar){
 
