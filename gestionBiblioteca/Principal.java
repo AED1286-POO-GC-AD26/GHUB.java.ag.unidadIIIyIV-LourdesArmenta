@@ -1,7 +1,11 @@
 package gestionBiblioteca;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 public class Principal{
     public static void main(String[] args) {
+        Menu menu = new Menu();
+        menu.iniciar();
+
+        /* 
         Biblioteca bib1 = new Biblioteca();
         Libro lib1 = new Libro("1","ISBN-1","Cien años de soledad","Gabriel Garcia Marquez");
         Libro lib2 = new Libro("2","ISBN-2","El amor en el tiempos del colera","Gabriel Garcia Marquez");
@@ -31,10 +35,12 @@ public class Principal{
         for(int i=0;i<listaLibros.length;i++){
             System.out.println(listaLibros[i].devolverDatos());
         }
-        */
+        
        for(int i=0;i<listaLibros.size();i++){
             System.out.println(listaLibros.get(i).devolverDatos());
         }
+        */
+
 
 
 

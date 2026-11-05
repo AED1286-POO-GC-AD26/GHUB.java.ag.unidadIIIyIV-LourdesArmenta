@@ -1,7 +1,6 @@
 package gestionBiblioteca;
 
 public abstract class MaterialBibliografico {
-
     private String idEjemplar;
     protected String titulo;
     protected int anio;
@@ -23,7 +22,6 @@ public abstract class MaterialBibliografico {
         return anio;
     }
     
-
     public String getIdEjemplar() {
         return idEjemplar;
     }

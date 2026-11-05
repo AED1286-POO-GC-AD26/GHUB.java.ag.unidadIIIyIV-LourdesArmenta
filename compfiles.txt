@@ -36,6 +36,7 @@
 ./gestionBiblioteca/MaterialBibliografico.java
 ./gestionBiblioteca/Estado.java
 ./gestionBiblioteca/Biblioteca.java
+./gestionBiblioteca/Menu.java
 ./gestionBiblioteca/Principal.java
 ./gestionBiblioteca/Libro.java
 ./empleado/EmpleadoPorHoras.java

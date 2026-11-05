@@ -2,6 +2,8 @@ package gestionBiblioteca;
 import java.util.ArrayList;
 
 import logica.Publicacion;
+
+
 public class Biblioteca{
     //private MaterialBibliografico listaLibros[];
     private final ArrayList<MaterialBibliografico> materialBibliograficos;
@@ -97,6 +99,26 @@ public class Biblioteca{
     }
     private void eliminarLibroInterno(Libro libro){
 
+    }
+    public boolean registrarMaterialBibliografico(MaterialBibliografico material) {
+        if (!datosValidos(material)) {
+            System.out.println("No se puede registrar una publicación con datos incompletos.");
+            return false;
+        }
+        if (existeMaterialBibliografico(material.getIdEjemplar())) {
+            System.out.println("Ya existe un ejemplar con el id: " + material.getIdEjemplar());
+            return false;
+        }
+        materialBibliograficos.add(material); //es un arrayLista
+        return true;
+    }
+    ///AQUI ME QUEDE PENDIENTE TERMINAR
+    private boolean datosValidos(MaterialBibliografico material) {
+        
+        return false;
+    }
+    public boolean existeMaterialBibliografico(String idEjemplar) {
+        return buscarPublicacionPorIdEjemplar(idEjemplar) != null;
     }
     
 }
