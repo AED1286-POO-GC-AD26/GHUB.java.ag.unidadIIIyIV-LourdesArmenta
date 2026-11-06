@@ -41,7 +41,7 @@ public class Revista extends MaterialBibliografico {
     @Override 
     public String devolverDatos() {
         
-        return  getIdEjemplar()+ issn + "  " + titulo + " " +periodicidad+ " "+
+        return  "- "+ getIdEjemplar()+ issn + "  " + titulo + " " +periodicidad+ " "+
                 estado;
     }
 

@@ -1,5 +1,6 @@
 package gestionBiblioteca;
 import java.util.ArrayList;
+
 import java.util.Scanner;
 public class Menu {
     private final Biblioteca biblioteca;
@@ -76,6 +77,11 @@ public class Menu {
             return;
         }
         Libro libro = new Libro(idEjemplar, isbn,  titulo,  autor, anio);
+        if (biblioteca.registrarMaterialBibliografico(libro)){
+            System.out.println("El Libro se registro con Exito!");
+        }else{
+            System.out.println("No fue posible registrar el Libro!! ");
+        }
 
     }
     public void registrarRevista(){
@@ -88,16 +94,43 @@ public class Menu {
             System.out.println("Todos los datos son obligatorios.");
             return;
         }
-        
+        Revista revista = new Revista(idEjemplar,  titulo, anio, periodicidad, issn);
+         if (biblioteca.registrarMaterialBibliografico(revista)){
+            System.out.println("La Revista se registró con Exito!");
+        }else{
+            System.out.println("No fue posible registrar La Revistro!! ");
+        }
 
     }
     public void consultarTodasLosMaterialesBibliograficos(){
+        ArrayList<MaterialBibliografico> lista = biblioteca.consultarTodasLosMateriales();
+        for(MaterialBibliografico mat: lista){
+            System.out.println(mat.devolverDatos());
+        }
+
 
     }
     public void buscarMaterialBibliograficoPorId(){
+        String idEjemplar = leerTexto("Id del ejemplar: ");
+        MaterialBibliografico mat = biblioteca.buscarMaterialPorIdEjemplar(idEjemplar);
+        if(mat==null){
+            System.out.println("No existe un Material Bibliografico con ese ID!!");
+        }else{
+            System.out.println(mat.devolverDatos());
+        }
+
 
     }
     public void eliminarMaterialBibliografico(){
+        String idEjemplar = leerTexto("Id del ejemplar que deseas ELIMINAR: ");
+        MaterialBibliografico mat = biblioteca.buscarMaterialPorIdEjemplar(idEjemplar);
+        if(mat==null){
+            System.out.println("No existe un Material Bibliografico con ese ID!!");
+        }else{
+            System.out.println(mat.devolverDatos());
+            //
+        }
+
 
     }
     private boolean datosIncompletos(String... datos) {
