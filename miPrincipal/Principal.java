@@ -415,12 +415,43 @@ public class Principal {
         miAnimal = new Gato("preciosa");
         miAnimal.hacerSonido();
 
+        interfases.Animal animal1 = new interfases.Gato();
+        animal1.hacerSonido();
+        animal1.moverse();
 
+        interfases.Gato gato4 = new interfases.Gato();
+        gato4.hacerSonido();
+        gato4.moverse();
 
+        interfases.Cachorro perro4 = new interfases.Perro();
+        perro4.hacerSonido();
+        perro4.moverse();
+        perro4.jugar();
 
+        interfases.TelefonoInteligente tel1 = new interfases.TelefonoInteligente();
+        interfases.Telefono tel2 = new interfases.TelefonoInteligente();
+        interfases.Camara tel3 = new interfases.TelefonoInteligente();
 
+        tel1.tomarFoto();
+        tel1.hacerLlamada();
+
+        tel2.hacerLlamada();
         
+        tel3.tomarFoto();
 
+        //demostracion de la interfase Comparable
+        interfases.Alumno alumno1 = new interfases.Alumno("Andres",15,87.5);
+        interfases.Alumno alumno2 = new interfases.Alumno("Andrea",15,95.0);
+        if(alumno1.compareTo(alumno2) >0){
+            System.out.println(alumno1.getNombre()+ " es mayor que "+alumno2.getNombre());
+        }else{
+            if(alumno1.compareTo(alumno2)<0){
+                System.out.println(alumno2.getNombre()+ " es mayor que "+alumno1.getNombre());
+            }else{
+                System.out.println(alumno1.getNombre()+" es igual que "+alumno2.getNombre());
+            }
+        }
+        //FALTA DEMOSTRAR COMO SE ORDENAN UN ARREGLO DE ALUMNOS, QUE YA SON COMPARABLES
 
 
         

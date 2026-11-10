@@ -30,6 +30,15 @@
 ./logica/DiaSemana.java
 ./logica/Velero.java
 ./logica/Libro.java
+./interfases/Animal.java
+./interfases/TelefonoInteligente.java
+./interfases/Alumno.java
+./interfases/Comparable.java
+./interfases/Cachorro.java
+./interfases/Gato.java
+./interfases/Perro.java
+./interfases/Camara.java
+./interfases/Telefono.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
 ./gestionBiblioteca/Revista.java

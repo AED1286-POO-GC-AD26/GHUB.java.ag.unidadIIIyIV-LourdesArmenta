@@ -128,7 +128,11 @@ public class Menu {
             System.out.println("No existe un Material Bibliografico con ese ID!!");
         }else{
             System.out.println(mat.devolverDatos());
-            //
+            if (biblioteca.eliminarMaterialBibliografico(idEjemplar)) {
+                System.out.println("Material Bibliografico eliminado con exito.");
+            } else {
+                System.out.println("No fue posible eliminar el Material Bibliografico.");
+            }
         }
 
 
