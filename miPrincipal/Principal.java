@@ -34,6 +34,10 @@ import logica.Animal;
 import logica.Perro;
 import logica.Gato;
 import logica.Pajaro;
+import interfases.CriterioAlumEdad;
+import interfases.CriterioAlumNombre;
+import interfases.CriterioAlumProm;
+import interfases.Util;
 
 public class Principal {
     public static void main(String[] args) {
@@ -451,9 +455,45 @@ public class Principal {
                 System.out.println(alumno1.getNombre()+" es igual que "+alumno2.getNombre());
             }
         }
-        //FALTA DEMOSTRAR COMO SE ORDENAN UN ARREGLO DE ALUMNOS, QUE YA SON COMPARABLES
+        //Ordenar una coleccion de Alumnos
+        interfases.Alumno arr[]={ new interfases.Alumno("Juan",20,85.0),
+                                  new interfases.Alumno("Pedro", 18, 73.0),
+                                  new interfases.Alumno("Alberto", 19, 70.5)
+                                };
+        //ordenamos el arreglo original
+        Util.ordenar(arr);
+        System.out.println("Mostrar el arreglo de Alumos Ordenados por Edad:");
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i].toString());
+          
+        }
+        interfases.Alumno arr2[]={ new interfases.Alumno("Juan",20,85.0),
+                                  new interfases.Alumno("Pedro", 18, 73.0),
+                                  new interfases.Alumno("Alberto", 19, 70.5)
+                                };
+        //ordenamos el arreglo original por nombre
+        Util.ordenar(arr2,new CriterioAlumNombre());
+        System.out.println("Mostrar el arreglo de Alumos Ordenados por Nombre:");
+        for(int i=0;i<arr2.length;i++){
+            System.out.println(arr2[i].toString());
+          
+        }
+        //ordenanos el arreglo por edad
+         Util.ordenar(arr2,new CriterioAlumEdad());
+         System.out.println("Mostrar el arreglo de Alumos Ordenados por Edad:");
+        for(int i=0;i<arr2.length;i++){
+            System.out.println(arr2[i].toString());
+          
+        }
+        //ordenamos el arreglo por promedio
+        Util.ordenar(arr2, new CriterioAlumProm());
+        System.out.println("Mostrar el arreglo de Alumos Ordenados por Promedio:");
+        for(int i=0;i<arr2.length;i++){
+            System.out.println(arr2[i].toString());
+          
+        }
 
 
-        
+
     }
 }

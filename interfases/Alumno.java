@@ -13,10 +13,11 @@ public class Alumno implements Comparable<Alumno>{
     //método heredado de la interfaz Comparable
     @Override 
     public int compareTo(Alumno otroAlumno){
-        /* 
+         
         int dif = this.edad - otroAlumno.edad; //18-15 = 3 //15-18 = -3 //18-18 = 0
         return dif;
-        */
+        
+       /* 
        //cambiar el criterio de comparacion para que ahora
        //sea el atributo nombre el que utilice
        if(this.nombre.compareTo(otroAlumno.nombre)>0){
@@ -28,6 +29,7 @@ public class Alumno implements Comparable<Alumno>{
             return 0;
 
        }
+            */
        
 
     }
