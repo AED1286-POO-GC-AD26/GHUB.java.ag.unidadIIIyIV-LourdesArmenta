@@ -17,24 +17,21 @@ public class Util {
         }
 
     }
-    public static void ordenar(Object arr[],Criterio cr){
+    public static void ordenar(Object arr[], Criterio cr) {
         boolean ordenado = false;
-        while(!ordenado){
-            
-            for(int i=0, j = arr.length-1; i<=j;i++,j--){
-                //ahora la decisionde sobre "quien precede a quien"
-                //la toma la instancia de Criterio cr
-                if(cr.comparar(arr[i+1], arr[i])<0){
-                    Object aux = arr[i];
-                    arr[i]= arr[i+1];
-                    arr[i+1]=aux;
-                    ordenado = false;
-                     
-                }
 
+        while (!ordenado) {
+            ordenado = true;
+
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (cr.comparar(arr[i + 1], arr[i]) < 0) {
+                    Object aux = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = aux;
+                    ordenado = false;
+                }
             }
         }
-
     }
-    
+        
 }

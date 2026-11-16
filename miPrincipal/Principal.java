@@ -39,6 +39,8 @@ import interfases.CriterioAlumNombre;
 import interfases.CriterioAlumProm;
 import interfases.Util;
 
+import genericidad.*;
+
 public class Principal {
     public static void main(String[] args) {
         System.out.println("==========================================");
@@ -492,6 +494,27 @@ public class Principal {
             System.out.println(arr2[i].toString());
           
         }
+
+        //DEMOSTRAR LA GENERICIDAD
+        CajaEnteros cajaenteros = new CajaEnteros(10);
+        System.out.println(cajaenteros.getDato());
+        CajaDobles cajadobles = new CajaDobles(9.81);
+        System.out.println(cajadobles.getDato());
+        CajaCadenas cajacadenas = new CajaCadenas("Hola, que tal!");
+        System.out.println(cajacadenas.getDato());
+
+        Caja<Integer> caja1 = new Caja<Integer>(90);
+        System.out.println(caja1.getDato());
+
+        Caja<Alumno> caja2 = new Caja<Alumno>(new Alumno("Juan", 18, "20260001"));
+        System.out.println(caja2.getDato());
+
+        Caja<String> caja3 = new Caja<>("nueva cadena");
+        System.out.println(caja3.getDato());
+
+
+
+
 
 
 
