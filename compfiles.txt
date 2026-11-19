@@ -46,11 +46,14 @@
 ./interfases/CriterioAlumEdad.java
 ./miPrincipal/Principal.java
 ./miTest/AppTest.java
+./genericidad/Repositorio.java
+./genericidad/Utilidades.java
 ./genericidad/CajaCadenas.java
 ./genericidad/MiColeccion.java
 ./genericidad/CajaEnteros.java
 ./genericidad/Caja.java
 ./genericidad/CajaDobles.java
+./genericidad/Terna.java
 ./gestionBiblioteca/Revista.java
 ./gestionBiblioteca/MaterialBibliografico.java
 ./gestionBiblioteca/Estado.java

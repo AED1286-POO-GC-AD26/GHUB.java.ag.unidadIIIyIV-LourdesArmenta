@@ -1,11 +1,13 @@
 package gestionBiblioteca;
 import java.util.ArrayList;
 
-import logica.Publicacion;
+import genericidad.MiColeccion;
 
 public class Biblioteca{
     //private MaterialBibliografico listaLibros[];
-    private final ArrayList<MaterialBibliografico> materialBibliograficos;
+    //private final ArrayList<MaterialBibliografico> materialBibliograficos;
+    private final MiColeccion<MaterialBibliografico> materialBibliograficos;
+
     //private static final int M = 20;
     //private int cardinalLibros;
     //private int capacidadLibros;
@@ -13,7 +15,8 @@ public class Biblioteca{
         //listaLibros = new Libro[M];
         //this.capacidadLibros = M;
         //this.cardinalLibros = 0;
-        materialBibliograficos = new ArrayList<MaterialBibliografico>();
+        //materialBibliograficos = new ArrayList<MaterialBibliografico>();
+        materialBibliograficos = new MiColeccion<>();
     }
     
     /*
@@ -28,13 +31,19 @@ public class Biblioteca{
             System.out.println("Ya existe un ejemplar con el id: " + material.getIdEjemplar());
             return false;
         }
-        materialBibliograficos.add(material);
+        //materialBibliograficos.add(material);
+        materialBibliograficos.agregar(material);
         return true;
     }
     public boolean existeLibro(String idEjemplar) {
         return buscarLibroPorIdEjemplar(idEjemplar) != null;
     }
     public MaterialBibliografico buscarLibroPorIdEjemplar(String idEjemplar) {
+        int indice = buscarIndicePublicacionPorIdEjemplar(idEjemplar);
+        if (indice >= 0) {
+            return materialBibliograficos.obtener(indice);
+        }
+        return null;
         
        /* 
        for (int i=0; i<materialBibliograficos.size();i++){
@@ -45,16 +54,30 @@ public class Biblioteca{
        return null;
        */
        //EL CODIGO DE ARRIBO PUEDE SER SUSTITUIDO POR EL SIGUIENTE
+       /* 
        for (MaterialBibliografico mat : materialBibliograficos) {
             if (mat.getIdEjemplar().equals(idEjemplar)) {
                 return mat;
             }
         }
         return null;
-
+        */
     }
-
-    public ArrayList<Libro> consultarTodosLosLibros() {
+    private int buscarIndicePublicacionPorIdEjemplar(String idEjemplar) {
+        for (int i = 0; i < materialBibliograficos.tamaño(); i++) {
+            if (materialBibliograficos.obtener(i).getIdEjemplar().equals(idEjemplar)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public ArrayList<MaterialBibliografico> consultarTodosLosLibros() {
+        ArrayList<MaterialBibliografico> resultado = new ArrayList<>();
+        for (int i = 0; i < materialBibliograficos.tamaño(); i++) {
+            resultado.add(materialBibliograficos.obtener(i));
+        }
+        return resultado;
+        /* 
        ArrayList<Libro> libros = new ArrayList<>();
         for (MaterialBibliografico mat : materialBibliograficos) {
             if (mat instanceof Libro libro) {
@@ -62,8 +85,16 @@ public class Biblioteca{
             }
         }
         return libros;
+        */
     }
     public boolean eliminarMaterialBibliografico(String idEjemplar){
+        int indice = buscarIndicePublicacionPorIdEjemplar(idEjemplar);
+        if (indice >= 0) {
+            materialBibliograficos.eliminar(indice);
+            return true;
+        }
+        return false;
+        /* 
         if (!existeMaterialBibliografico(idEjemplar)){
             return false;
         
@@ -77,6 +108,7 @@ public class Biblioteca{
             }
             return false;
         }
+        */
     }
 
     
@@ -113,12 +145,20 @@ public class Biblioteca{
         return buscarMaterialPorIdEjemplar(idEjemplar) != null;
     }
     public MaterialBibliografico buscarMaterialPorIdEjemplar(String idEjemplar) {
+        for(int i=0;i<materialBibliograficos.tamaño();i++){
+            if(materialBibliograficos.obtener(i).getIdEjemplar().equals(idEjemplar)){
+                return materialBibliograficos.obtener(i);
+            }
+        }
+        return null;
+        /* 
         for(int i=0;i<materialBibliograficos.size();i++){
             if (materialBibliograficos.get(i).getIdEjemplar().equals(idEjemplar)){
                 return materialBibliograficos.get(i);
             }
         }
         return null;
+        */
        //EL CODIGO COMENTADO ES LO MISMO QUE EL CODIGO DEBAJO
        /* 
 
@@ -132,7 +172,12 @@ public class Biblioteca{
     }
 
      public ArrayList<MaterialBibliografico> consultarTodasLosMateriales() {
-        return materialBibliograficos;
+        ArrayList<MaterialBibliografico> resultado = new ArrayList<>();
+        for (int i = 0; i < materialBibliograficos.tamaño(); i++) {
+            resultado.add(materialBibliograficos.obtener(i));
+        }
+        return resultado;
+        //return materialBibliograficos;
     }
 
     

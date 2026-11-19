@@ -512,6 +512,29 @@ public class Principal {
         Caja<String> caja3 = new Caja<>("nueva cadena");
         System.out.println(caja3.getDato());
 
+        //Ejemplo de una clase No Generica con un método Genérico
+        System.out.println("Ejemplo de arreglo de Enteros");
+        Integer arreglo_de_enteros[] = {1,2,3,4,5};
+        genericidad.Utilidades.imprimirArray(arreglo_de_enteros);
+        System.out.println("Ejemplo de un arreglo de String");
+        String arreglo_de_string[]={"Hola","Mundo","Genérico"};
+        genericidad.Utilidades.imprimirArray(arreglo_de_string);
+        System.out.println("Ejemplo de un arreglo de Dobles");
+        Double [] arreglo_de_dobles ={1.1,2.2,3.3,4.4,5.5};
+        genericidad.Utilidades.imprimirArray(arreglo_de_dobles);
+        //Ejemplo de uso de una clase genérica
+        Terna<Double> terna = new Terna<Double>(2.5,3.8,9.9);
+        System.out.println(terna);
+        System.out.println("Valor de la posicion 2:"+terna.get(2));
+        terna.set(8.3,2);
+        System.out.println("Muestro la terna modificado");
+        System.out.println(terna);
+        System.out.println("Valor de la posicion 4:"+terna.get(4));
+
+
+
+
+
 
 
 
