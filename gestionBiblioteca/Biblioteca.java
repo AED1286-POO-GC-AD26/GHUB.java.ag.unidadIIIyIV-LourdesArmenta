@@ -110,9 +110,7 @@ public class Biblioteca{
         }
         */
     }
-
-    
-    
+     
     public void eliminarLibro(String idEjemplar){
 
     }
@@ -123,7 +121,7 @@ public class Biblioteca{
 
     }
     
-    
+   
     private boolean datosValidos(MaterialBibliografico material) {
         if (material == null || estaVacio(material.getIdEjemplar())
                 || estaVacio(material.getTitulo())) {
